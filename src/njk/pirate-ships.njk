@@ -1,0 +1,22 @@
+{% extends '_templates/base.njk' %}
+
+{% block content %}
+<article class="container">
+    <h1>Ships of the Golden Age of pirates</h1>
+    <p>Intro text here.</p>
+    <div class="row">
+      {% for ships in pirates.ships %}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card bg-light border-info mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ ships.ship_name }}</h5>
+          <h6>{{ ships.captain }}</h6>
+          <p class="card-text">{{ ships.blurb }}</p>
+          <a href="{{ ships.source }}" target="_blank">Source</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</article>
+{% endblock %}
